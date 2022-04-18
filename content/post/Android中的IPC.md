@@ -1,11 +1,14 @@
 ---
-title: "对于IPC的解释"
+title: "Android中的IPC"
 date: 2020-01-08T21:34:06+08:00
 draft: false
+tags: ["Android", "IPC"]
+categories: ["Android"]
 ---
 
-# 什么是IPC？
-IPC是Interprocess communication的缩写，即进程间通讯
+# 什么是IPC
+
+IPC是Interprocess communication的缩写，即进程间通讯。
 
 # Linux现有IPC方式
 **管道**：在创建时分配一个page大小的内存，缓存区大小比较有限
@@ -260,14 +263,3 @@ BINDER_SET_IDLE_PRIORITY    -->     没有使用
 
 ##### 安全方面：
 传统的进程通讯方式对于通讯双方的身份并没有作出严格的验证，比如Socket通讯的IP地址是客户端手动填入，很容易进行伪造。然而，Binder机制从协议本身就支持对通讯双方做身份校验，从而大大的提高了安全性
-
-# 参考文章
-
-感谢各位dalao：
-- https://www.jianshu.com/p/52ec31fcf0a6
-- https://www.jianshu.com/p/2d6ddd6a3399
-- https://www.zhihu.com/question/39440766
-- http://www.myexception.cn/ai/1844929.html
-- http://gityuan.com/2015/11/01/binder-driver/
-- https://blog.csdn.net/AndroidStudyDay/article/details/93749470
-- https://lrh1993.gitbooks.io/android_interview_guide/content/android/basis/ContentProvider.html
