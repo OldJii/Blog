@@ -20,9 +20,9 @@ categories: ["Android", "开源框架"]
 
 <!--more-->
 
-## 正文
+# 正文
 
-### Create()方法
+## Create()方法
 这里给出一个最简单的Rxjava的实例
 ```java
 Observable.create(new ObservableOnSubscribe<String>() {
@@ -191,7 +191,7 @@ static final class CreateEmitter<T> extends AtomicReference<Disposable> implemen
 
 `source.subscribe(parent);`，最重要的是这一行，调用者是被观察者，传入的参数为观察者，基本可以猜出来了，这里是订阅的作用，真正将被观察者与观察者联系起来的地方
 
-### subscribe()方法
+## subscribe()方法
 ```java
 public final void subscribe(Observer<? super T> observer) {
 		ObjectHelper.requireNonNull(observer, "observer is null");
@@ -207,7 +207,7 @@ public final void subscribe(Observer<? super T> observer) {
 如果你只是想对Rxjava基本的数据传输流程、订阅的原理感兴趣，那么就不用看下去了，下面的内容主要是**Rxjava操作符**、**线程调度**、**背包**的源码分析
 
 ---
-### 操作符（Map）
+## 操作符（Map）
 开始分析Rxjava的操作符部分
 
 我们以Map操作符为例展开分析，首先，还是给出一个最简单的实例
@@ -317,7 +317,7 @@ static final class MapObserver<T, U> extends BasicFuseableObserver<T, U> {
 ---
 下面进入**线程调度**源码分析的阶段，先看subscribeOn()
 
-### 线程调度-subscribeOn()
+## 线程调度-subscribeOn()
 老规矩，先来一个参考代码
 ```java
 Observable.create(new ObservableOnSubscribe<String>() {
@@ -524,7 +524,7 @@ static final class DisposeTask implements Runnable, Disposable {
 ---
 然后看obsweveOn()，有了上面subscribeOn()的经验，分析obsweveOn()就快了
 
-### 线程调度-observeOn()
+## 线程调度-observeOn()
 实例
 ```java
 Observable.create(new ObservableOnSubscribe<String>() {
@@ -628,9 +628,7 @@ static final class ObserveOnObserver<T> extends BasicIntQueueDisposable<T> imple
 
 好了，Rxjava的源码分析到这里结束了，文中有很多没有讲到的地方，日后有时间的会继续讲解剩余部分。
 
-## 总结
-
-//TODO: :2020.02.07 - 这个地方可以引入下 https://juejin.im/book/5a09997cf265da432002bf6a 中对这部分的思考、实现链式调用的原因
+# 总结
 
 我们来整理一下文中出现的各个装饰者
 ```xml

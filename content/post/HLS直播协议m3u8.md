@@ -11,9 +11,9 @@ categories: ["音视频"]
 - HLS是一种流媒体传输协议
 - M3U8是HLS传输内容中的一部分
 
-## 流媒体传输协议
+# 流媒体传输协议
 
-#### 常见的流媒体传输协议
+## 常见的流媒体传输协议
 
 流媒体就是以数据流的方式，实时发布音频、视频多媒体内容的媒体形式，关键技术在于`流式传输`。
 
@@ -27,7 +27,7 @@ categories: ["音视频"]
 
 > 本文只详细介绍 HLS，不涉及 RTMP 与 RTSP
 
-#### 流媒体加密原理
+## 流媒体加密原理
 
 大多数流媒体传输协议都可以分为拆分、加密两部分。
 
@@ -37,19 +37,19 @@ categories: ["音视频"]
 
 > 一般使用 AES 加密算法
 
-#### 为什么是对称加密？
+## 为什么是对称加密？
 
 对称加密效率相对较高，非对称加密效率相对较低，但是更安全。流媒体场景对实时性的要求很高，而且数据量也很大，所以选用效率相对较高的对称加密算法。
 
 类似的场景还有很多，比如 HTTPS 的请求过程，内容传输为了效率选用对称加密（TLS），证书校验为了安全选用非对称加密（SSL）。
 
-## HLS
+# HLS
 
 HLS 全称 HTTP Live Streaming， 是由 Apple 提出的基于 HTTP 的流媒体传输协议，用于实时音视频流的传输，目前已被广泛应用与视频点播、直播场景。
 
 > 参考资料：[HTTP Live Streaming Document](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/StreamingMediaGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008332-CH1-SW1)
 
-#### 工作原理
+## 工作原理
 
 完整的 HLS 架构可以划分为 3 个部分：
 
@@ -70,7 +70,7 @@ HLS 全称 HTTP Live Streaming， 是由 Apple 提出的基于 HTTP 的流媒体
 5. 上传：将资源上传到 HTTP 服务器。
 6. 播放：客户端请求播放。
 
-#### 组成结构
+## 组成结构
 
 经过上面第 4 步骤的加工可以形成完整的结构，由 `Master Playlist`、`Media Playlist`、`Media Segment` 构成，关系结构如图。
 
@@ -84,7 +84,7 @@ Media Segment 就是单纯的 ts 格式的视频文件，并无任何描述信�
 
 > M3U8 是 Unicode 版本的 M3U，8 代表使用的是 UTF-8 编码，M3U 和 M3U8 都是多媒体列表的文件格式。
 
-## M3U8
+# M3U8
 
 M3U8 描述文件中由各种描述字段构成，下面解释部分主要字段的含义。
 
@@ -92,7 +92,7 @@ M3U8 描述文件中由各种描述字段构成，下面解释部分主要字段
 
 请求该链接的返回结果为一个 m3u8 文件，也就是 Master Playlist 文件。
 
-#### Master Playlist
+## Master Playlist
 
 ```java
 #EXTM3U
@@ -117,7 +117,7 @@ M3U8 描述文件中由各种描述字段构成，下面解释部分主要字段
 
 请求该链接的返回结果也为一个 m3u8 文件，也就是 Media Playlist 文件。
 
-#### Media Playlist
+## Media Playlist
 
 ```java
 #EXTM3U

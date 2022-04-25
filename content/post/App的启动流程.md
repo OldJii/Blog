@@ -12,7 +12,7 @@ categories: ["Android"]
 - 从点击应用图标到Activity创建成功
 - 从Activity创建成功到显示画面
 
-## 从开机到显示应用列表
+# 从开机到显示应用列表
 
 先看流程图：
 ![](https://imgoldjii.oss-cn-beijing.aliyuncs.com/16d3acbbbba41520.jpg)
@@ -27,7 +27,7 @@ SS进程负责启动和管理整个framework，包括**AMS**（ActivityManagerSe
 
 AMS通过Intent隐式启动的方式启动**Launcher**，Launcher根据已安装应用解析对应的xml、通过findViewById()获得一个RecycleView、加载应用图标、最后成功展示App列表。
 
-### 解释
+## 解释
 - **预设代码**：cpu制造厂商会预设一个地址，这个地址是各厂家约定统一的，Android手机会将固态存储设备ROM预先映射到该地址上；
 - **Bootloader**：类似BIOS，在系统加载前，用以初始化硬件设备，建立内存空间的映像图，为最终调用系统内核准备好环境；
 - **init进程**：init进程时Android系统中用户进程的鼻祖进程，主要作用是启动系统本地服务、fork出Zygote进程；
@@ -45,7 +45,7 @@ fork不允许存在多线程，而Binder通讯恰巧就是多线程；
 **Question 2：什么是窗口？**
 Android系统中的窗体是屏幕上的一块用于绘制各种UI元素并能够响应应用户输入的一个矩形区域，从原理上来讲，窗体的概念是独自占有一个Surface实例的显示区域，比如Dialog、Activity的界面、壁纸、状态栏以及Toast等都是窗体；
 
-## 从点击应用图标到Activity创建成功
+# 从点击应用图标到Activity创建成功
 先看流程图：
 ![](https://imgoldjii.oss-cn-beijing.aliyuncs.com/16d3acbc595b7401.jpg)
 
@@ -99,7 +99,7 @@ Android系统中的窗体是屏幕上的一块用于绘制各种UI元素并能�
 --> Activity.onCreate()
 ```
 
-### 解释
+## 解释
 - **ActivityThread**：App的真正入口。当开启App之后，会调用main()开始运行，开启消息循环队列，这就是传说中的UI线程或者叫主线程。与ActivityManagerServices配合，一起完成Activity的管理工作；
 - **ApplicationThread**：用来实现ActivityManagerService与ActivityThread之间的交互。在ActivityManagerService需要管理相关Application中的Activity的生命周期时，通过ApplicationThread的代理对象与ActivityThread通讯；
 - **Instrumentation**：可以理解为应用进程的管家，每个应用程序只有一个，每个Activity内都有该对象的引用，ActivityThread要创建或暂停某个Activity时，都需要通过Instrumentation来进行具体的操作；
@@ -110,7 +110,7 @@ Android系统中的窗体是屏幕上的一块用于绘制各种UI元素并能�
 AMS会保存一个ProcessRecord信息，有两部分构成，“uid + process”，每个应用工程序都有自己的uid，而process就是AndroidManifest.xml中Application的process属性，默认为package名。每次在新建新进程前的时候会先判断这个 ProcessRecord 是否已存在，如果已经存在就不会新建进程了，这就属于应用内打开 Activity 的过程了。
 
 
-## 从Activity创建成功到显示画面
+# 从Activity创建成功到显示画面
 
 onCreate()方法中先执行setContentView()方法将对应的xml文件传入，之后会去调用window.setContentView()，最终会在这里创建**Decorview**并填充标题栏、状态栏，然后获取**contentParent**，然后调用LayoutInflater.inflate解析xml文件获取根root（ViewRootImpl），通过root.addView()将contentParent添加到**ViewRootImpl**中去，至此onCreate()结束。
 
@@ -118,7 +118,7 @@ onCreate()方法中先执行setContentView()方法将对应的xml文件传入，
 
 先利用MeasureSpec完成onmeasure()，然后在onlayout()中确定各元素的坐标，ondraw()负责将view画到canvas上，再通过Surface进行跨进程最终调用Native层的**SGL**、openGI，最后再去调用硬件CPU进行渲染操作，最终界面显示在你眼前
 
-### 解释
+## 解释
 - **DecorView**：界面的根View，PhoneWindow的内部类
 - **contentParent**：所有View的根View，在DecorView里面
 - **ViewRootImpl**：ViewRoot是GUI管理系统与GUI呈现系统之间的桥梁，`WindowManager`通过`ViewRootImpl`与`DecorView`起联系。并且，`View`的绘制流程都是由`ViewRootImpl`发起的
