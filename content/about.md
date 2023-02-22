@@ -6,8 +6,8 @@ weight: 60
 comment: false
 ---
 
-Dear visitor, welcome to my personal website where I write what I have learnt or thought in my daily life. I am glad to hear what brings you here. Do not hesitate to share in the comment below! 😄
+Dear visitor, welcome to my personal website where I write what I have learnt or thought in my daily life. I am glad to hear what brings you here. 😄😄😄
 
 #### Who am I?
 
-Hi, I am Guankai Ji. I am a mobile client development engineer who is passionate about android platform. I am experienced in native android and cross platform Flutter development.
+I am OldJii. I am a mobile client development engineer who is passionate about android platform. I am experienced in native android and cross platform Flutter development.

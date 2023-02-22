@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mac多个Git账户共存 - oldjii‘s digital space</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oldjii" /><meta name="description" content="清除配置 查看 Git 本地配置
+1  git config --list   清除用户名和邮箱
+1 2  git config --global --unset user.name git config --global --unset user.email   " /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/git_account/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Mac多个Git账户共存" />
+<meta property="og:description" content="清除配置
+查看 Git 本地配置
+
+
+1
+
+
+git config --list
+
+
+清除用户名和邮箱
+
+
+1
+2
+
+
+git config --global --unset user.name
+git config --global --unset user.email
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/git_account/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-02-14T10:46:28+08:00" />
+<meta property="article:modified_time" content="2023-02-14T10:46:28+08:00" />
+
+<meta itemprop="name" content="Mac多个Git账户共存">
+<meta itemprop="description" content="清除配置
+查看 Git 本地配置
+
+
+1
+
+
+git config --list
+
+
+清除用户名和邮箱
+
+
+1
+2
+
+
+git config --global --unset user.name
+git config --global --unset user.email
+
+
+"><meta itemprop="datePublished" content="2023-02-14T10:46:28+08:00" />
+<meta itemprop="dateModified" content="2023-02-14T10:46:28+08:00" />
+<meta itemprop="wordCount" content="512">
+<meta itemprop="keywords" content="Git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mac多个Git账户共存"/>
+<meta name="twitter:description" content="清除配置
+查看 Git 本地配置
+
+
+1
+
+
+git config --list
+
+
+清除用户名和邮箱
+
+
+1
+2
+
+
+git config --global --unset user.name
+git config --global --unset user.email
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">oldjii‘s digital space</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">oldjii‘s digital space</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Mac多个Git账户共存</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-02-14 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%B7%A5%E4%BD%9C/"> 工作 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#清除配置">清除配置</a></li>
+        <li><a href="#生成-ssh-key">生成 ssh-key</a></li>
+        <li><a href="#信任-ssh-key">信任 ssh-key</a></li>
+        <li><a href="#配置公钥">配置公钥</a></li>
+        <li><a href="#配置-config">配置 config</a></li>
+        <li><a href="#测试链接">测试链接</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="清除配置">清除配置</h2>
+<p>查看 Git 本地配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>清除用户名和邮箱</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global --unset user.name
+</span></span><span class="line"><span class="cl">git config --global --unset user.email
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="生成-ssh-key">生成 ssh-key</h2>
+<p>使用 <code>ssh-keygen</code> 命令生成 ssh-key，并手动指定 id</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh-keygen -t rsa -f ~/.ssh/id_rsa_xx1@gmail.com -C <span class="s2">&#34;xx1@gmail.com&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成成功会输出以下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Generating public/private rsa key pair.
+</span></span><span class="line"><span class="cl">Enter file in which to save the key <span class="o">(</span>/Users/james/.ssh/id_rsa<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">Enter same passphrase again:
+</span></span><span class="line"><span class="cl">Your identification has been saved in /Users/james/.ssh/id_rsa.
+</span></span><span class="line"><span class="cl">Your public key has been saved in /Users/james/.ssh/id_rsa.pub.
+</span></span><span class="line"><span class="cl">The key fingerprint is:
+</span></span><span class="line"><span class="cl">SHA256:rwtxjGTJPoV9Mg8lFSf8D4X6jFexWVXKOMRaVyo+RO8 xx1@gmail.com
+</span></span><span class="line"><span class="cl">The key<span class="err">&#39;</span>s randomart image is:
+</span></span><span class="line"><span class="cl">+---<span class="o">[</span>RSA 3072<span class="o">]</span>----+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>        .o<span class="o">=</span>o+. .*<span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>     . + o.<span class="o">=</span>+++o.<span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>      * * .<span class="o">==</span><span class="nv">o</span><span class="o">==</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>     + + *ooo++  <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>      <span class="o">=</span> S .+o+E  <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       + .. +..  <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>      .   ..     <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       . .       <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>        o.       <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+----<span class="o">[</span>SHA256<span class="o">]</span>-----+
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后继续生成你的其他 Git 账号对应的 ssh-key</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh-keygen -t rsa -f ~/.ssh/id_rsa_xx2@gmail.com -C <span class="s2">&#34;xx2@gmail.com&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="信任-ssh-key">信任 ssh-key</h2>
+<p>使用 <code>ssh-add</code> 命令将生成的 ssh-key 添加到 ssh-agent 信任列表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh-add ~/.ssh/id_rsa_xx1@gmail.com
+</span></span><span class="line"><span class="cl">ssh-add ~/.ssh/id_rsa_xx2@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果遇到 <code>Could not open a connection to your authentication agent.</code> ，输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh-agent bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后重复执行 <code>ssh-add</code> 即可解决</p>
+<h2 id="配置公钥">配置公钥</h2>
+<p>复制对应公钥，配置到对应 Git 网站中（GitHub / GitLab）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pbcopy &lt; ~/.ssh/id_rsa_xx1@gmail.com.pub
+</span></span><span class="line"><span class="cl">pbcopy &lt; ~/.ssh/id_rsa_xx2@gmail.com.pub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这步具体的操作如果有不清楚的可以参考 <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Adding a new SSH key to your GitHub account</a></p>
+<h2 id="配置-config">配置 config</h2>
+<p>进入 ssh 目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open ~/.ssh/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按照以下规则编辑 config 文件，没有则创建</p>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host</td>
+<td>主机</td>
+<td>自己起</td>
+</tr>
+<tr>
+<td>Hostname</td>
+<td>主机名</td>
+<td>Git 公有地址，比如 gitub.com / gittee.com</td>
+</tr>
+<tr>
+<td>IdentityFile</td>
+<td>身份文件</td>
+<td>rsa 文件路径</td>
+</tr>
+<tr>
+<td>User</td>
+<td>用户</td>
+<td>自己起，一般邮箱就好</td>
+</tr>
+</tbody>
+</table>
+<p>编辑完 config 内容如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Host github1.com
+</span></span><span class="line"><span class="cl">Hostname github.com
+</span></span><span class="line"><span class="cl">IdentityFile ~/.ssh/id_rsa_xx1@gmail.com
+</span></span><span class="line"><span class="cl">User xx1@gmail.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host github2.com
+</span></span><span class="line"><span class="cl">Hostname github.com
+</span></span><span class="line"><span class="cl">IdentityFile ~/.ssh/id_rsa_xx2@gmail.com
+</span></span><span class="line"><span class="cl">User xx2@gmail.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="测试链接">测试链接</h2>
+<p>测试 Git 账号是否连接成功，<code>git@</code> 之后是 config 文件中配置的 Host</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -T git@github1.com
+</span></span><span class="line"><span class="cl">ssh -T git@github2.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>连接成功会有以下输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Hi xxx! You<span class="err">&#39;</span>ve successfully authenticated, but GitHub does not provide shell access.
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oldjii</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2023-02-14
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/Git/">Git</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/stable_diffusion/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">🎨 Stable-Diffusion-Colab</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/china_economy/">
+            <span class="next-text nav-default">《置身事内》读书笔记</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+  <script src="https://utteranc.es/client.js"
+            repo="Oldjii/oldjii"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+<div class="social-links">
+      <a href="mailto:mail@jiguankai.cn" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/OldJii" class="iconfont icon-github" title="github"></a>
+      <a href="hhttps://www.zhihu.com/people/404-21" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>oldjii</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
