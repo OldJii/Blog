@@ -9,7 +9,7 @@ categories: ["工作"]
 <div align="center">
 <img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/sdsm.png width=600 />
 </div>
-*Form Weird Wonderful Ai Art - https://weirdwonderfulai.art/resources/disco-diffusion-70-plus-artist-studies/*
+* Form Weird Wonderful Ai Art - https://weirdwonderfulai.art/resources/disco-diffusion-70-plus-artist-studies/ *
 
 <!--more-->
 
