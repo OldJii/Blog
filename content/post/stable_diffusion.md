@@ -9,10 +9,11 @@ categories: ["工作"]
 <div align="center">
 <img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/sdsm.png width=600 />
 </div>
-
 *Form Weird Wonderful Ai Art - https://weirdwonderfulai.art/resources/disco-diffusion-70-plus-artist-studies/*
 
 <!--more-->
+
+这是一份保姆级的在 Colab 搭建 Stable Diffusion 服务的教程，按照以下步骤操作，即可浅尝 Ai 绘画的魅力。
 
 ## 分配资源
 进入 [Stable_Diffusion_WebUi_Altryne](https://colab.research.google.com/github/altryne/sd-webui-colab/blob/main/Stable_Diffusion_WebUi_Altryne.ipynb) Colab 工程。
