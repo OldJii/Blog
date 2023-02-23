@@ -64,7 +64,7 @@ categories: ["工作"]
 
 输入 prompt，即可生成对应的图像，比如输入 “ an astronaut in the water ”。
 
-![1-image-20230222151132661](https://imgoldjii.oss-cn-beijing.aliyuncs.com/1-image-20230222151132661.png)
+![](https://imgoldjii.oss-cn-beijing.aliyuncs.com/2-image-20230222151132661.png)
 
 当然，你可以输入更多的 prompt 信息，来生成更加具体准确的图像。
 
