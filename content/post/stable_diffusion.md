@@ -14,7 +14,7 @@ categories: ["工作"]
 <!--more-->
 
 ## 🎨 Ai 绘画
-Stable Diffusion 是 stability.ai 于 2022 年發布的深度學習文生圖模型，可以在大多数配备有适度 GPU 的电脑硬件上运行。
+Stable Diffusion 是 stability.ai 于 2022 年发布的深度学习文生图模型，可以在大多数配备有适度 GPU 的电脑硬件上运行。
 
 Colaboratory 简称 Colab，是 Google Research 团队发布的一种托管式 Jupyter 笔记本服务，可以免费使用 GPU / TPU 计算资源。
 
