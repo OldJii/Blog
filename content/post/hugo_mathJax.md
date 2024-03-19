@@ -4,6 +4,7 @@ date: 2021-12-18T01:19:00+08:00
 draft: false
 tags: ["hugo", "mathJax"]
 categories: ["工作"]
+toc: false
 ---
 
 Hugo 默认是不支持显示 LaTeX 风格的数学表达式的，Markdown 中的数学表达式语法在 Hugo 中默认并不会被识别。

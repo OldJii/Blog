@@ -1,7 +1,7 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://folay.top/"
 languageCode = "en"
-defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
-title = "oldjii‘s digital space"
+defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
+title = "Folay‘s Blog"
 preserveTaxonomyNames = true
 disablePathToLower = true
 enableRobotsTXT = true
@@ -30,22 +30,22 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   filename = "sitemap.xml"
 
 [[menu.main]]             # config your menu              # 配置目录
-  name = "Home"
+  name = "主页"
   weight = 10
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "Archives"
+  name = "归档"
   weight = 20
   identifier = "archives"
   url = "/post/"
 [[menu.main]]
-  name = "Tags"
+  name = "标签"
   weight = 30
   identifier = "tags"
   url = "/tags/"
  [[menu.main]]
-  name = "Categories"
+  name = "分类"
   weight = 40
   identifier = "categories"
   url = "/categories/"
@@ -54,13 +54,13 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   version = "4.x"           # Used to give a friendly message when you have an incompatible update
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
-  since = "2017"            # Site creation time          # 站点建立时间
+  since = "2019"            # Site creation time          # 站点建立时间
   # use public git repo url to link lastmod git commit, enableGitInfo should be true.
   # 指定 git 仓库地址，可以生成指向最近更新的 git commit 的链接，需要将 enableGitInfo 设置成 true.
   gitRepo = ""
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "oldjii‘s digital space"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "Folay"        # default: the title value    # 默认值: 上面设置的title值
   keywords = ["Hugo", "theme","even"]
   description = "Hugo theme even example site."
 
@@ -74,7 +74,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   dateFormatToUse = "2006-01-02"
 
   # show word count and read time ?                       # 是否显示字数统计与阅读时间
-  moreMeta = false
+  moreMeta = true
 
   # Syntax highlighting by highlight.js
   highlightInClient = false
@@ -183,7 +183,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "mailto:mail@jiguankai.cn"
+    a-email = "mailto:mail@folay.top"
     # b-stack-overflow = "http://localhost:1313"
     # c-twitter = "http://localhost:1313"
     # d-facebook = "http://localhost:1313"
@@ -191,7 +191,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     # f-google = "http://localhost:1313"
     g-github = "https://github.com/OldJii"
     # h-weibo = "http://localhost:1313"
-    i-zhihu = "hhttps://www.zhihu.com/people/404-21"
+    # i-zhihu = "hhttps://www.zhihu.com/people/404-21"
     # j-douban = "http://localhost:1313"
     # k-pocket = "http://localhost:1313"
     # l-tumblr = "http://localhost:1313"

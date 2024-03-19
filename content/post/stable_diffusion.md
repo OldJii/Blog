@@ -1,17 +1,21 @@
 ---
-title: "🎨 Stable-Diffusion-Colab"
+title: "在 Colab 搭建 Stable Diffusion"
 date: 2023-02-22T15:49:06+08:00
 draft: false
 tags: ["Ai 绘画", "Stable Diffusion"]
 categories: ["工作"]
+toc: false
 ---
 
 <div align="center">
 <img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/sdsm.png width=600 />
 </div>
-*Form Weird Wonderful Ai Art - https://weirdwonderfulai.art/resources/disco-diffusion-70-plus-artist-studies/*
+
+Form [Weird Wonderful Ai Art](https://weirdwonderfulai.art/resources/disco-diffusion-70-plus-artist-studies)
 
 <!--more-->
+
+> 2023 年 9 月 23 日更新：Colab 官方禁用 Stable Diffusion WebUI，无法解决断网问题，本文方法作废。详情见 https://decrypt.co/197428/google-colab-stable-diffusion-web-ui-ban
 
 ## 🎨 Ai 绘画
 Stable Diffusion 是 stability.ai 于 2022 年发布的深度学习文生图模型，可以在大多数配备有适度 GPU 的电脑硬件上运行。

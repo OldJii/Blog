@@ -10,7 +10,7 @@ categories: ["生活"]
 <img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/doujiaomenmian.jpg width=400 height=400 />
 </div>
 
-公司园区爆发疫情，被迫居家隔离，心念念外面的豆角焖面，自己尝试了下，还算成功。
+公司园区爆发疫情，被迫居家隔离，心念念外面的豆角焖面，在猪屁的指导下尝试了下，还算成功。
 
 <!--more-->
 

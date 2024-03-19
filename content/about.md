@@ -1,13 +1,19 @@
 ---
-title: "About"
+title: "关于"
 date: 2022-03-20T22:17:35+08:00
 menu: "main"
-weight: 60
+weight: 50
 comment: false
 ---
 
-Dear visitor, welcome to my personal website where I write what I have learnt or thought in my daily life. I am glad to hear what brings you here. 😄😄😄
+” 老骥伏枥，志在千里 ”，你好，我是 Folay，或者可以喊我老纪，目前在北京一家陌生社交领域的互联网公司工作。
 
-#### Who am I?
+我喜欢：
+- 有序
+- 木制品
+- 面
+- 中医推拿
 
-I am OldJii. I am a mobile client development engineer who is passionate about android platform. I am experienced in native android and cross platform Flutter development.
+我讨厌：
+- 风险
+- 情绪不稳定的人

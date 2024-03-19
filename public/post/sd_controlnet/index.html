@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Stable Diffusion 的光影艺术 - Folay‘s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oldjii" /><meta name="description" content="最近在网上经常有看到类似上面这种图片，图片里的建筑物或者是光影形成了一些文字，给图片附加了更多的信息。评论有很多人很好奇，所以记录下制作方式。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://folay.top/post/sd_controlnet/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Stable Diffusion 的光影艺术" />
+<meta property="og:description" content="最近在网上经常有看到类似上面这种图片，图片里的建筑物或者是光影形成了一些文字，给图片附加了更多的信息。评论有很多人很好奇，所以记录下制作方式。
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://folay.top/post/sd_controlnet/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-09-26T15:49:06+08:00" />
+<meta property="article:modified_time" content="2023-09-26T15:49:06+08:00" />
+<meta itemprop="name" content="Stable Diffusion 的光影艺术">
+<meta itemprop="description" content="最近在网上经常有看到类似上面这种图片，图片里的建筑物或者是光影形成了一些文字，给图片附加了更多的信息。评论有很多人很好奇，所以记录下制作方式。
+
+
+"><meta itemprop="datePublished" content="2023-09-26T15:49:06+08:00" />
+<meta itemprop="dateModified" content="2023-09-26T15:49:06+08:00" />
+<meta itemprop="wordCount" content="574">
+<meta itemprop="keywords" content="Stable Diffusion,AICG," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Stable Diffusion 的光影艺术"/>
+<meta name="twitter:description" content="最近在网上经常有看到类似上面这种图片，图片里的建筑物或者是光影形成了一些文字，给图片附加了更多的信息。评论有很多人很好奇，所以记录下制作方式。
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Folay</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Folay</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Stable Diffusion 的光影艺术</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-09-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%B7%A5%E4%BD%9C/"> 工作 </a>
+            </div>
+          <span class="more-meta"> 约 574 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>最近在网上经常有看到类似上面这种图片，图片里的建筑物或者是光影形成了一些文字，给图片附加了更多的信息。评论有很多人很好奇，所以记录下制作方式。</p>
+<div align="center">
+<img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/picgo/202310192146502.png width=100%/>
+</div>
+<p>其实制作的方法很简单，只是在基本 text2img 的基础上使用 ControlNet 进行垫图并附加一些光影性强的 Model 即可。</p>
+<h2 id="checkpoint-配置">Checkpoint 配置</h2>
+<ul>
+<li>Checkpoint Model：推荐使用写实类的模型，比如 majicMIX realistic、dalcefoPainting 3rd。</li>
+<li>Sampler method：推荐使用 DMP++ 2S a Karras、DMP++ 2M Karras。</li>
+<li>Sampling Steps：推荐 25 左右，不要超过 30，因为要实现光影文字效果，Step 数太多会渲染掉文-字效果。</li>
+</ul>
+<div align="center">
+<img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/picgo/202310192143384.png width=100%/>
+</div>
+<h2 id="底图制作">底图制作</h2>
+<p>需要用到一张黑底白字的图片，用什么做随意，用你熟悉工具即可，尺寸需要跟你上面配置的 Size 信息保持一致，以保证文字的位置是准确的，比如下图。</p>
+<div align="center">
+<img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/picgo/202310192150418.png width=100%/>
+</div>
+<p>另外，如果你能让文字的边缘实现模糊效果就更好了，生成的图片光影文字效果会更贴合。</p>
+<h2 id="controlnet-配置">ControlNet 配置</h2>
+<ul>
+<li>ControlNet Model：对出图效果的影响比较关键，推荐使用 control_v1p_sd15_brightness、lightingBasedPicture_v10，都是比较优秀的光影 Model。</li>
+<li>ControlNet Type：全部</li>
+<li>预处理器：推荐 none，也可以使用 tile_colorfix，但是要搭配 control_v11f1e_sd15_tile 模型。</li>
+<li>Control Weight：0.4 ～ 0.55</li>
+<li>Starting Control Step：0 ~ 0.1</li>
+<li>Ending Control Step：0.45 ～ 0.6</li>
+</ul>
+<div align="center">
+<img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/picgo/202310192144711.png width=100%/>
+</div>
+<p>最后就抽卡吧，慢慢抽，另外附上一张网友测试的 Control Step 与出图效果的对比图。</p>
+<div align="center">
+<img src=https://imgoldjii.oss-cn-beijing.aliyuncs.com/picgo/202310192154764.webp width=100%/>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">oldjii</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-09-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/Stable-Diffusion/">Stable Diffusion</a>
+          <a href="/tags/AICG/">AICG</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/318/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">2023 年国庆自驾川藏线摄影记录</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/read_travel_love/">
+            <span class="next-text nav-default">阅读、游历和爱情</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+  <script src="https://utteranc.es/client.js"
+            repo="Oldjii/oldjii"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+<div class="social-links">
+      <a href="mailto:mail@folay.top" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/OldJii" class="iconfont icon-github" title="github"></a>
+  <a href="https://folay.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>oldjii</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
