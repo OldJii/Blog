@@ -6,6 +6,14 @@ tags: ["hugo", "mathJax"]
 categories: ["工作"]
 toc: false
 ---
+
+![](https://cn.bing.com/th?id=OHR.Umschreibung_EN-US4693850900_768x1280.jpg)
+![](https://cn.bing.com/th?id=OHR.HummockIce_EN-US4606231645_768x1280.jpg)
+![](https://cn.bing.com/th?id=OHR.DonkeyFeast_EN-US1153850805_768x1280.jpg)
+![](https://cn.bing.com/th?id=OHR.Breckenridge_EN-US4460042968_768x1280.jpg)
+
+<!--more-->
+
 在使用 Hugo 搭建个人博客时，常常会遇到图片排版的问题。尤其是竖图和横图混合时，Hugo 默认的排版方式会让竖图左右留出大量空白，显得不美观。此外，Markdown 本身也不支持横向排列图片（除非使用内嵌 HTML，但这种方式存在诸多问题，我尝试后已放弃）。
 
 之前我参考了一篇 [Hugo 多图排版的教程](https://immmmm.com/about-images-gird/)，但按照教程操作后并没有达到预期效果。评论区里也有其他用户遇到了类似问题，但原作者并未给出解答。
